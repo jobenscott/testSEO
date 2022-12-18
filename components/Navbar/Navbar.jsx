@@ -45,12 +45,12 @@ function Navbar() {
   return (
     <div>
       <Head>
-        <title>xPand</title>
+        <title>CommunityBuilt</title>
       </Head>
         <AppBar className={classes.nav} position="sticky">
           <Toolbar className={classes.nav}>
             <Typography onClick={onHomeClick} variant="h6" className={classes.title} sx={{ mt: 1 }}>
-              {"Xpand"}
+              {"CommunityBuilt"}
             </Typography>
             {navLinks.map(link => (
               <Button
