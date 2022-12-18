@@ -63,7 +63,7 @@ function Navbar() {
         <title>My Navbar</title>
       </Head>
       {strapiData ? (
-        <AppBar sx={{zIndex: 5, marginBottom: 50, paddingBottom: 50, paddingTop: 50}} className={classes.nav} position="static">
+        <AppBar className={classes.nav} position="static">
           <Toolbar>
             <Typography onClick={onHomeClick} variant="h6" className={classes.title} sx={{mt: 1}}>
               {"Xpand"}
