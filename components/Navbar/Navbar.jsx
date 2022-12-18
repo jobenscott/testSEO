@@ -82,6 +82,22 @@ function Navbar() {
           </Toolbar>
         </AppBar>
       ) : null}
+      <Toolbar>
+            <Typography onClick={onHomeClick} variant="h6" className={classes.title} sx={{mt: 1}}>
+              {"Xpand"}
+            </Typography>
+            {navLinks.map(link => (
+              <Button 
+                key={link.id}
+                color="inherit"
+                onClick={() => router.push(link.path)}
+                width={200}
+                sx={{mt: 1}}
+              >
+                {link.path}
+              </Button>
+            ))}
+          </Toolbar>
     </div>
   )
 }
