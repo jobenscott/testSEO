@@ -1,9 +1,5 @@
-import React, { useEffect } from "react";
-import axios from "axios";
-import Image from 'next/image';
-import {Typography, styled, Grid, Container, Button, Box} from "@mui/material";
-import {makeStyles} from "@mui/styles";
-import { getStrapiMedia } from "../../lib/media";
+import { Button, Container, Grid, styled, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,22 +22,10 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 
 
-const HeroBanner = ({banner}) => {
+const HeroBanner = () => {
   const classes = useStyles();
   return (
     <Container disableGutters maxWidth={false}>
-       {banner.Hero &&
-      <Grid sx={{ background: "black", left: 0, position: "absolute", height:{ lg: "500px", md: "600px", sm: "450px", xs: "300px"}, width: "100%", zIndex: "-1" }}>
-        <Grid sx={{ left: 0, position: "absolute",  height:{ lg: "500px", md: "600px", sm: "450px", xs: "300px"}, width: "100%", overflow: "hidden", opacity: ".35" }}>
-        <Image
-              src={getStrapiMedia(banner.Hero)}
-              layout="fill"
-              objectFit="cover"
-              alt="some image"
-            />
-        </Grid>
-      </Grid>
-      }
       <Grid 
         spacing={{
           xl: 20,
@@ -80,7 +64,7 @@ const HeroBanner = ({banner}) => {
                 mt: {lg: 0, md: 0, sm: "3rem", xs: 0}
               }}
             >
-              {banner.Header}
+              Build your online presence with us!
             </Typography>
           </Grid>
           <Grid item>
@@ -94,7 +78,7 @@ const HeroBanner = ({banner}) => {
               variant="subtitle1" 
               gutterBottom
             >
-              {banner.subHeader}
+              Why Choose Us?
             </Typography>
           </Grid>
         </Grid>

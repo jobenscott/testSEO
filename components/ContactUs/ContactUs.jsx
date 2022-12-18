@@ -1,9 +1,5 @@
-import React, { useEffect } from "react";
-import axios from "axios";
-import {Typography, styled, Grid, Container, Button, Box} from "@mui/material";
-import {makeStyles} from "@mui/styles";
-import Image from 'next/image';
-import { Root, classes } from "./styles";
+import { Button, Grid, styled, Typography } from "@mui/material";
+import { classes, Root } from "./styles";
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: "#F2EFEA",

@@ -17,6 +17,7 @@
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@mui/styles": "^5.10.16",
+    "@next/bundle-analyzer": "^13.0.7",
     "@next/font": "latest",
     "axios": "^1.2.1",
     "moment": "^2.29.4",
@@ -26,7 +27,8 @@
     "react": "latest",
     "react-dom": "latest",
     "react-markdown": "^8.0.4",
-    "react-moment": "^1.1.2"
+    "react-moment": "^1.1.2",
+    "sharp": "^0.31.2"
   },
   "devDependencies": {
     "eslint": "latest",

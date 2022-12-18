@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Head from 'next/head'  
-import {Typography, styled, Grid, Container, Button, Box, AppBar, Toolbar} from "@mui/material";
-import {makeStyles} from "@mui/styles";
-import { useRouter } from 'next/router'
-import axios from 'axios'
+import { AppBar, Button, Toolbar, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import axios from 'axios';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from "react";
 
 const useStyles = makeStyles(theme => ({
   root: {

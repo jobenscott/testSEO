@@ -1,10 +1,6 @@
-import React, { useEffect } from "react";
-import axios from "axios";
+import { Box, Grid, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import Image from 'next/image';
-import DeleteIcon from '@mui/icons-material/Delete';
-import {Typography, styled, Grid, Container, Button, Box} from "@mui/material";
-import {makeStyles} from "@mui/styles";
-import { getStrapiMedia } from "../../lib/media";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -12,7 +8,25 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const WhyUs = ({whyUs}) => {
+const whyUsBoxes = [
+  {
+    id: "1",
+    boxHeader: "Clean Websites",
+    boxSubHeader: "Clean, responsive, and accessible websites."
+  },
+  {
+    id: "2",
+    boxHeader: "SEO is our priority",
+    boxSubHeader: "Your online presence matters. We know that."
+  },
+  {
+    id: "3",
+    boxHeader: "Catered to you",
+    boxSubHeader: "One size does not fit all. We get it."
+  }
+];
+
+const WhyUs = () => {
   
   const classes = useStyles();
 
@@ -40,13 +54,13 @@ const WhyUs = ({whyUs}) => {
               zIndex: 1 
             }}
           >
-            {whyUs.header}
+            Why Choose Us?
           </Typography>
         </Grid>
         <Grid item sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: {lg: "row", md: "row", sm: "column", xs: "column"} }}>
-          {whyUs.KeyPoints.map((keypoint, index) => {
+          {whyUsBoxes.map((keypoint, index) => {
             return (
-             <Grid sx={{ m: 4 }}>
+             <Grid sx={{ m: 4 }} key={keypoint.id}>
              <Box
                sx={{
                  width: {
@@ -71,8 +85,7 @@ const WhyUs = ({whyUs}) => {
                  sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", textAlign: "center" }}
                >
                  <Image
-                  src={getStrapiMedia(keypoint.icon)}
-                  // layout="fill"
+                  src="/home.png"
                   width="32"
                   height="32"
                   objectFit="cover"
