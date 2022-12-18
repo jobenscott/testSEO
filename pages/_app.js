@@ -10,7 +10,8 @@ const MyApp = ({ Component, pageProps }) => {
         <link
           rel="shortcut icon"
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RNM1TM9B"></script>
+      </Head>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RNM1TM9B"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -22,7 +23,6 @@ const MyApp = ({ Component, pageProps }) => {
             `,
           }}
         />
-      </Head>
       <Navbar />
       <Component {...pageProps} />
     </>
