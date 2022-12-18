@@ -82,6 +82,7 @@ function Navbar() {
           </Toolbar>
         </AppBar>
       ) : null}
+      <Toolbar />
     </div>
   )
 }
