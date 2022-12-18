@@ -30,18 +30,7 @@ function Navbar() {
     router.push('/')
   }
 
-  const [strapiData, setStrapiData] = useState(null)
-
-  async function getStrapiData() {
-    try {
-      const response = await axios.get(
-        `http://localhost:1337/api/navbar/?populate[navlinks][populate]=*`
-      );
-      setStrapiData(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  const matches = useMediaQuery('(min-width:600px)');
 
   const navLinks = [
     {
@@ -65,16 +54,16 @@ function Navbar() {
       {strapiData ? (
         <AppBar className={classes.nav} position="sticky">
           <Toolbar>
-            <Typography onClick={onHomeClick} variant="h6" className={classes.title} sx={{mt: 1}}>
+            <Typography onClick={onHomeClick} variant="h6" className={classes.title} sx={{ mt: 1 }}>
               {"Xpand"}
             </Typography>
             {navLinks.map(link => (
-              <Button 
+              <Button
                 key={link.id}
                 color="inherit"
                 onClick={() => router.push(link.path)}
                 width={200}
-                sx={{mt: 1}}
+                sx={{ mt: 1 }}
               >
                 {link.path}
               </Button>
@@ -82,22 +71,24 @@ function Navbar() {
           </Toolbar>
         </AppBar>
       ) : null}
-      <Toolbar>
-            <Typography onClick={onHomeClick} variant="h6" className={classes.title} sx={{mt: 1}}>
-              {"Xpand"}
-            </Typography>
-            {navLinks.map(link => (
-              <Button 
-                key={link.id}
-                color="inherit"
-                onClick={() => router.push(link.path)}
-                width={200}
-                sx={{mt: 1}}
-              >
-                {link.path}
-              </Button>
-            ))}
-          </Toolbar>
+      {matches &&
+        <Toolbar>
+          <Typography onClick={onHomeClick} variant="h6" className={classes.title} sx={{ mt: 1, mb: 1}}>
+            {"Xpand"}
+          </Typography>
+          {navLinks.map(link => (
+            <Button
+              key={link.id}
+              color="inherit"
+              onClick={() => router.push(link.path)}
+              width={200}
+              sx={{ mt: 1, mb: 1 }}
+            >
+              {link.path}
+            </Button>
+          ))}
+        </Toolbar>
+      }
     </div>
   )
 }
