@@ -60,7 +60,7 @@ const HeroBanner = () => {
                 zIndex: 1, 
                 color: "white",
                 fontWeight: {lg: "800", md: "600", sm: "600", xs: "600"},
-                fontSize: {lg: "4rem", md: "3rem", sm: "2.2rem", xs: "1.5rem"},
+                fontSize: {lg: "3.5rem", md: "3.5rem", sm: "3rem", xs: "1.5rem"},
               }}
             >
               Focus on your business
@@ -72,7 +72,7 @@ const HeroBanner = () => {
                 zIndex: 1, 
                 color: "white", 
                 fontWeight: "300", 
-                fontSize: {lg: "2.5rem", md: "2rem", sm: "1.5rem", xs: "1rem"} 
+                fontSize: {lg: "2rem", md: "2rem", sm: "1.5rem", xs: "1rem"} 
               }} 
               variant="h2" 
               gutterBottom

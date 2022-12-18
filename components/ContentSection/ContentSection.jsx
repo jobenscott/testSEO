@@ -48,13 +48,13 @@ const ContentSection = ({ content }) => {
                         justifyContent: "center",
                         alignItems: "center",
                         flexDirection: "column",
-                        maxWidth: {lg: "60%", md: "70%", sm: "80%", xs: "80%"},
+                        maxWidth: {lg: "55%", md: "55%", sm: "75%", xs: "75%"},
                         mb: 2
                     }}
                 >
                     <Typography
                         variant="h4"
-                        sx={{fontSize: { lg: "1.3rem", md: "1.25rem", sm: "1.2rem", xs: "1rem" }}}
+                        sx={{fontSize: { lg: "1.2", md: "1.2", sm: "1.2rem", xs: "1rem" }}}
                         className={classes.title}
                     >
                         We understand that running a business can be overwhelming, and the last thing you want to worry about is the technicalities of your website. That's where we come in. Our team of experts specializes in building clean, concise websites that adhere to the latest SEO standards.
