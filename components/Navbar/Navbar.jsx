@@ -1,9 +1,8 @@
-import { AppBar, Button, Toolbar, Typography } from "@mui/material";
+import { AppBar, Button, Toolbar, Typography, useMediaQuery} from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import axios from 'axios';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from "react";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,7 +29,7 @@ function Navbar() {
     router.push('/')
   }
 
-  const matches = useMediaQuery('(min-width:600px)');
+  const matches = useMediaQuery('(max-width:600px)');
 
   const navLinks = [
     {
@@ -43,17 +42,13 @@ function Navbar() {
     }
   ]
 
-  useEffect(() => {
-    getStrapiData();
-  }, []);
   return (
     <div>
       <Head>
-        <title>My Navbar</title>
+        <title>xPand</title>
       </Head>
-      {strapiData ? (
         <AppBar className={classes.nav} position="sticky">
-          <Toolbar>
+          <Toolbar className={classes.nav}>
             <Typography onClick={onHomeClick} variant="h6" className={classes.title} sx={{ mt: 1 }}>
               {"Xpand"}
             </Typography>
@@ -70,9 +65,8 @@ function Navbar() {
             ))}
           </Toolbar>
         </AppBar>
-      ) : null}
       {matches &&
-        <Toolbar>
+        <Toolbar className={classes.nav}>
           <Typography onClick={onHomeClick} variant="h6" className={classes.title} sx={{ mt: 1, mb: 1}}>
             {"Xpand"}
           </Typography>
