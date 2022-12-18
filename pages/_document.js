@@ -11,6 +11,7 @@ class MyDocument extends Document {
           name="description"
           content="Website development and SEO services"
         />
+        <link rel="shortcut icon" href="/favicon.png" />
         </Head>
         <body>
           <Main />
