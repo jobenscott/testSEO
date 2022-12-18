@@ -65,7 +65,7 @@ function Navbar() {
             ))}
           </Toolbar>
         </AppBar>
-      {matches &&
+      {/* {matches &&
         <Toolbar className={classes.nav}>
           <Typography onClick={onHomeClick} variant="h6" className={classes.title} sx={{ mt: 1, mb: 1}}>
             {"Xpand"}
@@ -82,7 +82,7 @@ function Navbar() {
             </Button>
           ))}
         </Toolbar>
-      }
+      } */}
     </div>
   )
 }
