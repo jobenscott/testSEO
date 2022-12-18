@@ -28,17 +28,17 @@ const HeroBanner = () => {
     <Container disableGutters maxWidth={false}>
       <Grid 
         spacing={{
-          xl: 20,
-          lg: 15,
-          md: 8,
-          sm: 8,
+          xl: 10,
+          lg: 8,
+          md: 5,
+          sm: 5,
           xs: 0
         }} 
         container 
         sx={{ 
           display: "flex", 
           justifyContent: "center",
-          height:{ lg: "500px", md: "600px", sm: "450px", xs: "300px"},
+          height:{ lg: "400px", md: "400px", sm: "300px", xs: "200px"},
           alignItems: "center", 
           flexDirection: "column" 
         }}
@@ -54,31 +54,30 @@ const HeroBanner = () => {
         >
           <Grid item>
             <Typography
-              variant="h4"
+              variant="h1"
               gutterBottom
               sx={{ 
                 zIndex: 1, 
-                color: "#F2EFEA",
+                color: "white",
                 fontWeight: {lg: "800", md: "600", sm: "600", xs: "600"},
-                fontSize: {lg: "4rem", md: "3rem", sm: "2.5rem", xs: "1.7rem"},
-                mt: {lg: 0, md: 0, sm: "3rem", xs: 0}
+                fontSize: {lg: "4rem", md: "3rem", sm: "2.2rem", xs: "1.5rem"},
               }}
             >
-              Build your online presence with us!
+              Focus on your business
             </Typography>
           </Grid>
           <Grid item>
             <Typography 
               sx={{ 
                 zIndex: 1, 
-                color: "#F2EFEA", 
+                color: "white", 
                 fontWeight: "300", 
-                fontSize: {lg: "2.5rem", md: "2rem", sm: "1.5rem", xs: "1.2rem"} 
+                fontSize: {lg: "2.5rem", md: "2rem", sm: "1.5rem", xs: "1rem"} 
               }} 
-              variant="subtitle1" 
+              variant="h2" 
               gutterBottom
             >
-              Why Choose Us?
+              We'll take care of your online presence
             </Typography>
           </Grid>
         </Grid>

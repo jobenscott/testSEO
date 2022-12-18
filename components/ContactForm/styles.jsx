@@ -9,8 +9,8 @@ const classes = {
 const Root = styled("div")(({ theme, ...props }) => ({
     [`& .${classes.title}`]: {
         fontWeight: { lg: "600", md: "600", sm: "600", xs: "400" },
-        color: "#3D5467",
-        fontSize: { lg: "3.5rem", md: "3rem", sm: "2rem", xs: "2rem" },
+        color: "white",
+        fontSize: { lg: "6rem", md: "6rem", sm: "3rem", xs: "2.5rem" },
         zIndex: 1,
     },
 }));

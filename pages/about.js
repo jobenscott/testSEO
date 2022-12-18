@@ -16,7 +16,7 @@ export default function Index({
         <Grid item sx={{ width: "100%", background: "#395467" }}>
           <HeroBanner />
         </Grid>
-        <Grid item sx={{ background: "#8AA29E", width: "100%" }}>
+        <Grid item sx={{ background: "#686963", width: "100%" }}>
           <ContentSection />
         </Grid>
       </Grid>

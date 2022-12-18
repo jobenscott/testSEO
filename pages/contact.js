@@ -9,7 +9,7 @@ export default function Index({
       <Head>
       </Head>
       <Grid container sx={{ display: "flex" }}>
-        <Grid item sx={{ width: "100%", background: "#8AA29E" }}>
+        <Grid item sx={{ width: "100%", background: "#3D5467", minHeight: "100vh" }}>
             <ContactForm />
         </Grid>
       </Grid>

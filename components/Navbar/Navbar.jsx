@@ -43,6 +43,17 @@ function Navbar() {
     }
   }
 
+  const navLinks = [
+    {
+      id: "1",
+      path: "about"
+    },
+    {
+      id: "2",
+      path: "contact"
+    }
+  ]
+
   useEffect(() => {
     getStrapiData();
   }, []);
@@ -52,12 +63,12 @@ function Navbar() {
         <title>My Navbar</title>
       </Head>
       {strapiData ? (
-        <AppBar className={classes.nav} position="static">
+        <AppBar sx={{zIndex: 5, marginBottom: 50, paddingBottom: 50, paddingTop: 50}} className={classes.nav} position="static">
           <Toolbar>
             <Typography onClick={onHomeClick} variant="h6" className={classes.title} sx={{mt: 1}}>
               {"Xpand"}
             </Typography>
-            {strapiData.data && strapiData.data?.attributes.navlinks.map(link => (
+            {navLinks.map(link => (
               <Button 
                 key={link.id}
                 color="inherit"

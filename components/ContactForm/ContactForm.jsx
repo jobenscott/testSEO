@@ -1,4 +1,4 @@
-import { Button, Grid, styled, TextField, Typography } from "@mui/material";
+import { Button, Grid, styled, Typography, TextField } from "@mui/material";
 import { classes, Root } from "./styles";
 
 const ColorButton = styled(Button)(({ theme }) => ({
@@ -9,6 +9,28 @@ const ColorButton = styled(Button)(({ theme }) => ({
     },
 }));
 
+const CssTextField = styled(TextField)({
+    '& label': {
+        color: 'white',
+    },
+    '& label.Mui-focused': {
+        color: 'white',
+    },
+    '& .MuiInput-underline:after': {
+        borderBottomColor: 'white',
+    },
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+            borderColor: '#F2EFEA',
+        },
+        '&:hover fieldset': {
+            borderColor: '#F2EFEA',
+        },
+        '&.Mui-focused fieldset': {
+            borderColor: '#F2EFEA',
+        },
+    },
+});
 
 const ContactForm = () => {
     return (
@@ -20,26 +42,47 @@ const ContactForm = () => {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    flexDirection: "row",
+                    flexDirection: "column",
                     mb: "3rem"
                 }}
             >
                 <Grid
                     item
                     sx={{
-                        mt: "4rem",
+                        mt: "8rem",
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        flexDirection: "column"
+                        flexDirection: "column",
+                        maxWidth: "80%"
                     }}
                 >
-                    <TextField
-                        id="multiline-flexible"
-                        label="Multiline"
-                        multiline
-                        maxRows={4}
-                    />
+                    <Typography
+                        variant="h4"
+                        className={classes.title}
+                        sx={{
+                            zIndex: 1,
+                            color: "white",
+                            fontWeight: "500",
+                            fontSize: { lg: "3.5rem", md: "3.5rem", sm: "2.5rem", xs: "2rem" }
+                        }}
+                    >
+                        Interested in learning more?
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <Typography
+                        sx={{
+                            zIndex: 1,
+                            color: "white",
+                            fontWeight: "300",
+                            fontSize: { lg: "1.7rem", md: "1.7rem", sm: "1.5rem", xs: "1.3rem" }
+                        }}
+                        variant="h2"
+                        gutterBottom
+                    >
+                        Send us your email and we'll reach out when we're ready to launch!
+                    </Typography>
                 </Grid>
                 <Grid
                     item
@@ -51,42 +94,18 @@ const ContactForm = () => {
                         flexDirection: "column"
                     }}
                 >
-                    <Grid 
-                    item 
-                    sx={{ 
-                        mt: "4rem", 
-                        display: "flex", 
-                        justifyContent: "center", 
-                        alignItems: "center", 
-                        flexDirection: "column",
-                        maxWidth: "80%"
-                        }}
-                    >
-                    <Typography
-                        variant="h4"
-                        className={classes.title}
-                    >
-                        Interested in learning more?
-                    </Typography>
+                    <CssTextField
+                        sx={{ width: "20rem" }}
+                        id="email"
+                        label="Email"
+                        inputProps={{ style: { color: "white" } }}
+                        maxRows={4}
+                    />
                 </Grid>
-                <Grid 
-                    item 
-                    sx={{ 
-                        mt: "4rem", 
-                        display: "flex", 
-                        justifyContent: "center", 
-                        alignItems: "center", 
-                        flexDirection: "column",
-                        maxWidth: "80%"
-                        }}
-                    >
-                    <Typography
-                        variant="h6"
-                        className={classes.title}
-                    >
-                        Let us know a little about your business and provide your email and we will reach out as soon as possible.
-                    </Typography>
-                </Grid>
+                <Grid item>
+                    <ColorButton sx={{ width: { lg: "14rem", md: "14rem", sm: "12rem", xs: "12rem" }, height: { lg: "3rem", md: "3rem", sm: "2.5rem", xs: "2rem" }, borderRadius: 10, fontSize: { lg: "1.25rem", md: "1.25rem", sm: "1.2rem", xs: "1rem" }, mt: { lg: 0, md: 0, sm: "-8rem", xs: "-4rem" } }} variant="contained">
+                        Submit
+                    </ColorButton>
                 </Grid>
             </Grid>
         </Root>
