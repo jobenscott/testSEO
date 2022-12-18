@@ -57,7 +57,7 @@ const ContentSection = ({ content }) => {
                         sx={{fontSize: { lg: "1.3rem", md: "1.25rem", sm: "1.2rem", xs: "1rem" }}}
                         className={classes.title}
                     >
-                        We understand that running a business can be overwhelming, and the last thing you want to worry about is the technicalities of your website. That's where we come in. Our team of experts specializes in building clean, concise websites that adhere to the latest SEO standards. Focus on what matters to you, and we'll focus on showing that value to the world.
+                        We understand that running a business can be overwhelming, and the last thing you want to worry about is the technicalities of your website. That's where we come in. Our team of experts specializes in building clean, concise websites that adhere to the latest SEO standards.
                     </Typography>
                 </Grid>
                 <Grid item sx={{padding: 0}}>

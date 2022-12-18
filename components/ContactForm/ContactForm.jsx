@@ -1,5 +1,6 @@
 import { Button, Grid, styled, Typography, TextField } from "@mui/material";
 import { classes, Root } from "./styles";
+import React, { useEffect, useState } from "react";
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: "#F2EFEA",
@@ -32,11 +33,34 @@ const CssTextField = styled(TextField)({
     },
 });
 
+
+
 const ContactForm = () => {
+
+    const [email, setEmail] = useState("");
+
+    const saveEmail = (e) => {
+            const postData = async () => {
+              const data = {
+                email: email,
+              };
+        
+              const response = await fetch("/api/emails", {
+                method: "POST",
+                body: JSON.stringify(data),
+              });
+              return response.json();
+            };
+            postData().then((data) => {
+              console.log(data);
+            });
+        }
+
     return (
         <Root>
             <Grid
                 container
+                // spacing={{lg: 4, md: 4, sm: 10, xs: 10}}
                 spacing={4}
                 sx={{
                     display: "flex",
@@ -67,7 +91,7 @@ const ContactForm = () => {
                             fontSize: { lg: "3.5rem", md: "3.5rem", sm: "2.5rem", xs: "2rem" }
                         }}
                     >
-                        Interested in learning more?
+                        Still interested?
                     </Typography>
                 </Grid>
                 <Grid item>
@@ -75,13 +99,13 @@ const ContactForm = () => {
                         sx={{
                             zIndex: 1,
                             color: "white",
-                            fontWeight: "300",
-                            fontSize: { lg: "1.7rem", md: "1.7rem", sm: "1.5rem", xs: "1.3rem" }
+                            fontWeight: "500",
+                            fontSize: { lg: "1.7rem", md: "1.7rem", sm: "1.2rem", xs: "1rem" }
                         }}
                         variant="h2"
                         gutterBottom
                     >
-                        Send us your email and we'll reach out when we're ready to launch!
+                       We'll reach out when we're ready!
                     </Typography>
                 </Grid>
                 <Grid
@@ -95,7 +119,8 @@ const ContactForm = () => {
                     }}
                 >
                     <CssTextField
-                        sx={{ width: "20rem" }}
+                        onChange={(e) => setEmail(e.target.value)}
+                        sx={{ width: {lg: "20rem", md: "20rem", sm: "15rem", xs: "15rem"} }}
                         id="email"
                         label="Email"
                         inputProps={{ style: { color: "white" } }}
@@ -103,7 +128,7 @@ const ContactForm = () => {
                     />
                 </Grid>
                 <Grid item>
-                    <ColorButton sx={{ width: { lg: "14rem", md: "14rem", sm: "12rem", xs: "12rem" }, height: { lg: "3rem", md: "3rem", sm: "2.5rem", xs: "2rem" }, borderRadius: 10, fontSize: { lg: "1.25rem", md: "1.25rem", sm: "1.2rem", xs: "1rem" }, mt: { lg: 0, md: 0, sm: "-8rem", xs: "-4rem" } }} variant="contained">
+                    <ColorButton onClick={(e) => saveEmail()} sx={{ width: { lg: "14rem", md: "14rem", sm: "12rem", xs: "12rem" }, height: { lg: "3rem", md: "3rem", sm: "2.5rem", xs: "2rem" }, borderRadius: 10, fontSize: { lg: "1.25rem", md: "1.25rem", sm: "1.2rem", xs: "1rem" } }} variant="contained">
                         Submit
                     </ColorButton>
                 </Grid>
