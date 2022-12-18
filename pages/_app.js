@@ -11,15 +11,17 @@ const MyApp = ({ Component, pageProps }) => {
           rel="shortcut icon"
         />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RNM1TM9B"></script>
-        <script>
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-L9RNM1TM9B');
-          `}
-        </script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+  
+            gtag('config', 'G-L9RNM1TM9B');
+            `,
+          }}
+        />
       </Head>
       <Navbar />
       <Component {...pageProps} />
