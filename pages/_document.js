@@ -7,11 +7,17 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-        <meta
-          name="description"
-          content="Website development and SEO services"
-        />
-        <link rel="shortcut icon" href="/favicon.png" />
+          <meta
+            name="description"
+            content="Website development and SEO services"
+          />
+          {/* <!-- Chrome, Firefox OS and Opera --> */}
+          <meta name="theme-color" content="#F1EDEE" />
+          {/* <!-- Windows Phone --> */}
+          <meta name="msapplication-navbutton-color" content="#F1EDEE" />
+          {/* <!-- iOS Safari --> */}
+          <meta name="apple-mobile-web-app-status-bar-style" content="#F1EDEE" />
+          <link rel="shortcut icon" href="/favicon.png" />
         </Head>
         <body>
           <Main />
