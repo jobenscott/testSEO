@@ -38,6 +38,7 @@ const CssTextField = styled(TextField)({
 const ContactForm = () => {
 
     const [email, setEmail] = useState("");
+    const [inTouch, setInTouch] = useState(false);
 
     const saveEmail = (e) => {
             const postData = async () => {
@@ -52,7 +53,7 @@ const ContactForm = () => {
               return response.json();
             };
             postData().then((data) => {
-              console.log(data);
+                console.log(data);
             });
         }
 
@@ -119,6 +120,7 @@ const ContactForm = () => {
                     }}
                 >
                     <CssTextField
+                        value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         sx={{ width: {lg: "20rem", md: "20rem", sm: "15rem", xs: "15rem"} }}
                         id="email"
@@ -128,7 +130,7 @@ const ContactForm = () => {
                     />
                 </Grid>
                 <Grid item>
-                    <ColorButton onClick={(e) => saveEmail()} sx={{ width: { lg: "14rem", md: "14rem", sm: "12rem", xs: "12rem" }, height: { lg: "3rem", md: "3rem", sm: "2.5rem", xs: "2rem" }, borderRadius: 10, fontSize: { lg: "1.25rem", md: "1.25rem", sm: "1.2rem", xs: "1rem" } }} variant="contained">
+                    <ColorButton onClick={(e) => saveEmail(e)} sx={{ width: { lg: "14rem", md: "14rem", sm: "12rem", xs: "12rem" }, height: { lg: "3rem", md: "3rem", sm: "2.5rem", xs: "2rem" }, borderRadius: 10, fontSize: { lg: "1.25rem", md: "1.25rem", sm: "1.2rem", xs: "1rem" } }} variant="contained">
                         Submit
                     </ColorButton>
                 </Grid>
