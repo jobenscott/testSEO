@@ -7,7 +7,7 @@ export default function Index({
 }) {
 
   const [email, setEmail] = useState("");
-
+  const [inTouch, setInTouch] = useState(false);
 
 
   const saveEmail = (e) => {
@@ -23,7 +23,7 @@ export default function Index({
             }).then((response) => response.json())
           };
           postData().then((data) => {
-            console.log(data);
+            setInTouch(true);
           });
       }
 
@@ -33,7 +33,7 @@ export default function Index({
       </Head>
       <Grid container sx={{ display: "flex" }}>
         <Grid item sx={{ width: "100%", background: "#3D5467", minHeight: "100vh" }}>
-            <ContactForm setEmail={setEmail} saveEmail={saveEmail} />
+            <ContactForm setEmail={setEmail} saveEmail={saveEmail} inTouch={inTouch} email={email} />
         </Grid>
       </Grid>
     </Container>

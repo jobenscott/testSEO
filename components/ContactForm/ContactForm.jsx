@@ -36,8 +36,11 @@ const CssTextField = styled(TextField)({
 
 
 
-const ContactForm = ({saveEmail, setEmail}) => {
+const ContactForm = ({saveEmail, setEmail, inTouch, email }) => {
 
+    useEffect(() => {
+        
+    }, [inTouch]);
 
     return (
         <Root>
@@ -102,6 +105,7 @@ const ContactForm = ({saveEmail, setEmail}) => {
                     }}
                 >
                     <CssTextField
+                        value={inTouch ? "" : email}
                         onChange={(e) => setEmail(e.target.value)}
                         sx={{ width: {lg: "20rem", md: "20rem", sm: "15rem", xs: "15rem"} }}
                         id="email"
