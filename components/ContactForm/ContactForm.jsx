@@ -1,6 +1,7 @@
 import { Button, Grid, styled, Typography, TextField } from "@mui/material";
 import { classes, Root } from "./styles";
 import React, { useEffect, useState } from "react";
+import useSWR from "swr";
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: "#F2EFEA",
@@ -38,22 +39,23 @@ const CssTextField = styled(TextField)({
 const ContactForm = () => {
 
     const [email, setEmail] = useState("");
-    const [inTouch, setInTouch] = useState(false);
+
+
 
     const saveEmail = (e) => {
+        console.log(email);
             const postData = async () => {
               const data = {
                 email: email,
               };
         
-              const response = await fetch("/api/emails", {
+              const response = await fetch("http://localhost:3000/api/emails", {
                 method: "POST",
                 body: JSON.stringify(data),
-              });
-              return response.json();
+              }).then((response) => response.json())
             };
             postData().then((data) => {
-                console.log(data);
+              console.log(data);
             });
         }
 
@@ -120,7 +122,6 @@ const ContactForm = () => {
                     }}
                 >
                     <CssTextField
-                        value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         sx={{ width: {lg: "20rem", md: "20rem", sm: "15rem", xs: "15rem"} }}
                         id="email"

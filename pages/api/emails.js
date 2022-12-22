@@ -1,4 +1,4 @@
-export default function handler(req, res) {
+export default async function handler(req, res) {
     const { email } = JSON.parse(req.body);
     return new Promise((resolve, reject) => {
         fetch(
@@ -12,8 +12,11 @@ export default function handler(req, res) {
                 body: JSON.stringify({'email': email})
             }
         ).then((r) => {
+            // console.log(r.body);
             res.status(r.status).json(r.body);
             resolve();
+        }).catch((e) => {
+            console.log(e)
         });
     });
   }
