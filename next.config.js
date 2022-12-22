@@ -10,7 +10,10 @@ const nextConfig = {
   images: {
     loader: "default",
     domains: ["localhost", "30d1-2600-8800-620f-f600-fd42-d640-7a4d-da7b.ngrok.io"],
-  }
+  },
+
+  // adding this fixes it for me:
+  swcMinify: false,
 }
 // module.exports = (phase, nextConfig) => {
 //   return withBundleAnalyzer(nextConfig)
