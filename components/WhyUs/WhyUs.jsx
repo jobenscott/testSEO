@@ -143,7 +143,7 @@ const WhyUs = () => {
               fontSize: { lg: "1rem", md: "1rem", sm: "1.2rem", xs: "1em" },
             }}
           >
-            See more
+            About Us
           </Typography>
           </Link>
         </Grid>

@@ -62,7 +62,7 @@ const Contact = () => {
                                     fontSize: { lg: "1.25rem", md: "1.25rem", sm: "1.25rem", xs: "1rem" }
                                 }}
                             >
-                                Learn More
+                                Contact Us
                             </ColorButton>
                         </Link>
                     </Grid>
