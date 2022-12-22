@@ -36,28 +36,8 @@ const CssTextField = styled(TextField)({
 
 
 
-const ContactForm = () => {
+const ContactForm = ({saveEmail, setEmail}) => {
 
-    const [email, setEmail] = useState("");
-
-
-
-    const saveEmail = (e) => {
-        console.log(email);
-            const postData = async () => {
-              const data = {
-                email: email,
-              };
-        
-              const response = await fetch("/api/emails", {
-                method: "POST",
-                body: JSON.stringify(data),
-              }).then((response) => response.json())
-            };
-            postData().then((data) => {
-              console.log(data);
-            });
-        }
 
     return (
         <Root>
