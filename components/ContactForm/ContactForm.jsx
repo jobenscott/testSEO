@@ -49,7 +49,7 @@ const ContactForm = () => {
                 email: email,
               };
         
-              const response = await fetch("http://localhost:3000/api/emails", {
+              const response = await fetch("/api/emails", {
                 method: "POST",
                 body: JSON.stringify(data),
               }).then((response) => response.json())
