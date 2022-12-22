@@ -14,6 +14,7 @@ const nextConfig = {
 
   // adding this fixes it for me:
   swcMinify: false,
+  trailingSlash: true,
 }
 // module.exports = (phase, nextConfig) => {
 //   return withBundleAnalyzer(nextConfig)
