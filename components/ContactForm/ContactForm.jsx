@@ -47,7 +47,7 @@ const ContactForm = () => {
               };
         
               const response = await fetch("/api/emails", {
-                method: "GET",
+                method: "POST",
                 body: JSON.stringify(data),
               });
               return response.json();
@@ -130,7 +130,7 @@ const ContactForm = () => {
                     />
                 </Grid>
                 <Grid item>
-                    <ColorButton onClick={(e) => saveEmail(e)} sx={{ width: { lg: "14rem", md: "14rem", sm: "12rem", xs: "12rem" }, height: { lg: "3rem", md: "3rem", sm: "2.5rem", xs: "2rem" }, borderRadius: 10, fontSize: { lg: "1.25rem", md: "1.25rem", sm: "1.2rem", xs: "1rem" } }} variant="contained">
+                    <ColorButton onClick={(e) => saveEmail()} sx={{ width: { lg: "14rem", md: "14rem", sm: "12rem", xs: "12rem" }, height: { lg: "3rem", md: "3rem", sm: "2.5rem", xs: "2rem" }, borderRadius: 10, fontSize: { lg: "1.25rem", md: "1.25rem", sm: "1.2rem", xs: "1rem" } }} variant="contained">
                         Submit
                     </ColorButton>
                 </Grid>
